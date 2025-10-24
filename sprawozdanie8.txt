@@ -1,0 +1,27 @@
+>> format long
+>> wynik1=Romberg(@fun, 0, 0.6, 0.0001)
+k = 4
+blad = 3.679437961312537e-06
+wynik1 = 0.940007276622470
+>> I = (@fun,0,0.6)
+error: parse error:
+
+  syntax error
+
+>>> I = (@fun,0,0.6)
+             ^
+>> I = quad(@fun,0,0.6)
+I = 0.940007258491471
+>> roznica1 = abs(wynik1-I)
+roznica1 = 1.813099892444825e-08
+>> roznica1<=eps
+ans = 0
+>> wynik2=Romberg(@fun, 0, 0.6, 0.00001)
+k = 4
+blad = 3.679437961312537e-06
+wynik2 = 0.940007276622470
+>> roznica2=abs(wynik2-I)
+roznica2 = 1.813099892444825e-08
+>> roznica2<=eps
+ans = 0
+>> diary off
